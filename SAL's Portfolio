@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Saleh S. Mukhrish's portfolio showcasing strategic and technical achievements.">
+	<title>Saleh S. Mukhrish - Portfolio</title>
+	<!-- Tailwind CSS CDN -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<!-- Google Fonts: Inter -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+	<!-- FontAwesome for Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<style>
+    	:root {
+        	--box-bg-light: #ffffff;
+        	--box-bg-dark: #1d1d1f;
+        	--text-light: #1d1d1f;
+        	--text-dark: #f5f5f7;
+        	--accent-blue: #007AFF;
+        	--accent-teal: #00C4B4;
+        	--border-light: #e0e0e3;
+        	--border-dark: #48484a;
+        	--bg-light: #f9f9f9;
+        	--bg-dark: #121212;
+    	}
+    	[data-theme="dark"] {
+        	--box-bg-light: var(--box-bg-dark);
+        	--text-light: var(--text-dark);
+        	--border-light: var(--border-dark);
+        	--bg-light: var(--bg-dark);
+    	}
+    	body {
+        	font-family: 'Inter', sans-serif;
+        	background-color: var(--bg-light);
+        	color: var(--text-light);
+        	line-height: 1.5;
+        	scroll-behavior: smooth;
+    	}
+    	[dir="rtl"] {
+        	direction: rtl;
+    	}
+    	[dir="rtl"] .fa-icon {
+        	transform: scaleX(-1);
+    	}
+    	html {
+        	scroll-behavior: smooth;
+    	}
+    	.card {
+        	position: relative;
+        	overflow: hidden;
+        	transition: transform 0.3s ease, box-shadow 0.3s ease;
+        	border-radius: 12px;
+    	}
+    	.card:hover {
+        	transform: translateY(-2px);
+        	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    	}
+    	.gradient-top {
+        	position: absolute;
+        	top: 0;
+        	left: 0;
+        	width: 100%;
+        	height: 4px;
+        	background: linear-gradient(to right, var(--accent-blue), var(--accent-teal));
+        	opacity: 0;
+        	transition: opacity 0.3s ease;
+    	}
+    	.card:hover .gradient-top {
+        	opacity: 1;
+    	}
+    	.section-header .gradient-top {
+        	opacity: 1;
+    	}
+    	.scroll-dot {
+        	cursor: pointer;
+        	transition: all 0.3s ease;
+    	}
+    	.scroll-dot:hover {
+        	background-color: var(--accent-blue);
+        	transform: scale(1.3);
+    	}
+    	.scroll-dot span {
+        	position: absolute;
+        	top: 50%;
+        	transform: translateY(-50%);
+        	font-size: 0.75rem;
+        	color: var(--text-light);
+        	background: var(--box-bg-light);
+        	padding: 0.5rem 1rem;
+        	border-radius: 0.5rem;
+        	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        	opacity: 0;
+        	transition: opacity 0.3s ease;
+    	}
+    	.scroll-dot:hover span {
+        	opacity: 1;
+    	}
+    	[dir="rtl"] .scroll-dot span {
+        	left: 1.5rem;
+    	}
+    	[dir="ltr"] .scroll-dot span {
+        	right: 1.5rem;
+    	}
+    	.tool-tag {
+        	transition: transform 0.2s ease;
+    	}
+    	.tool-tag:hover {
+        	transform: scale(1.05);
+    	}
+    	.contact-icon {
+        	transition: all 0.3s ease;
+    	}
+    	.contact-icon:hover {
+        	background: linear-gradient(to right, var(--accent-blue), var(--accent-teal));
+        	color: #fff;
+        	transform: scale(1.1);
+    	}
+    	.cta-button {
+        	transition: all 0.3s ease;
+        	border-radius: 40px;
+    	}
+    	.cta-button:hover {
+        	filter: brightness(0.9);
+    	}
+    	nav a:hover, nav button:hover {
+        	color: var(--accent-blue);
+    	}
+    	.max-w-prose {
+        	max-width: 700px;
+    	}
+    	.theme-toggle, .lang-toggle {
+        	transition: none;
+    	}
+	</style>
+</head>
+<body class="min-h-screen">
+	<!-- Menu Bar -->
+	<nav class="fixed top-0 left-0 right-0 bg-[var(--box-bg-light)] shadow-md z-50">
+    	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        	<div class="flex justify-between items-center py-4">
+            	<div class="text-xl font-semibold" data-i18n="brand">Saleh S. Mukhrish</div>
+            	<div class="hidden md:flex space-x-6 items-center">
+                	<a href="#executive-summary" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i14n="nav-executive-summary">Executive Summary</a>
+                	<a href="#impact-highlights" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i14n="nav-impact-highlights">Impact Highlights</a>
+                	<a href="#case-studies-detailed" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i14n="nav-case-studies-detailed">Case Studies</a>
+                	<a href="#execution-framework" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i14n="nav-execution-framework">Execution Framework</a>
+                	<a href="#startup-roadmap" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i14n="nav-startup-roadmap">Startup Roadmap</a>
+                	<a href="#resilience-philosophy" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i14n="nav-resilience-philosophy">Resilience Philosophy</a>
+                	<a href="#agile-flow" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i14n="nav-agile-flow">Agile Flow</a>
+                	<a href="#founder-mindset" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i14n="nav-founder-mindset">Founder Mindset</a>
+                	<a href="#my-operating-system" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i14n="nav-my-operating-system">Operating System</a>
+                	<a href="#product-builds" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i14n="nav-product-builds">Product Builds</a>
+                	<a href="#skills-tools" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i14n="nav-skills-tools">Skills & Tools</a>
+                	<a href="#testimonials" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i14n="nav-testimonials">Testimonials</a>
+                	<a href="#interests" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i14n="nav-interests">Interests</a>
+                	<a href="#contact" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i14n="nav-contact">Contact</a>
+                	<button id="theme-toggle" class="theme-toggle rounded-full border-2 border-transparent bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] p-1">
+                    	<i class="fas fa-sun text-[var(--text-light)]"></i>
+                	</button>
+            	</div>
+            	<div class="md:hidden">
+                	<button id="mobile-menu-toggle" class="text-[var(--text-light)] focus:outline-none">
+                    	<i class="fas fa-bars text-xl"></i>
+                	</button>
+            	</div>
+        	</div>
+        	<div id="mobile-menu" class="md:hidden hidden bg-[var(--box-bg-light)] shadow-md">
+            	<div class="flex flex-col space-y-4 py-4 px-4">
+                	<a href="#header" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i18n="nav-header">Header</a>
+                	<a href="#executive-summary" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i18n="nav-executive-summary">Executive Summary</a>
+                	<a href="#impact-highlights" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i18n="nav-impact-highlights">Impact Highlights</a>
+                	<a href="#case-studies-detailed" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i18n="nav-case-studies-detailed">Case Studies</a>
+                	<a href="#execution-framework" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i18n="nav-execution-framework">Execution Framework</a>
+                	<a href="#startup-roadmap" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i18n="nav-startup-roadmap">Startup Roadmap</a>
+                	<a href="#resilience-philosophy" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i18n="nav-resilience-philosophy">Resilience Philosophy</a>
+                	<a href="#agile-flow" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i18n="nav-agile-flow">Agile Flow</a>
+                	<a href="#founder-mindset" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i18n="nav-founder-mindset">Founder Mindset</a>
+                	<a href="#my-operating-system" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i18n="nav-my-operating-system">Operating System</a>
+                	<a href="#product-builds" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i18n="nav-product-builds">Product Builds</a>
+                	<a href="#skills-tools" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i18n="nav-skills-tools">Skills & Tools</a>
+                	<a href="#testimonials" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i18n="nav-testimonials">Testimonials</a>
+                	<a href="#interests" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i18n="nav-interests">Interests</a>
+                	<a href="#contact" class="text-[var(--text-light)] hover:text-[var(--accent-blue)]" data-i18n="nav-contact">Contact</a>
+                	<button id="theme-toggle-mobile" class="theme-toggle flex items-center space-x-2 rounded-full border-2 border-transparent bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] p-1 w-fit">
+                    	<i class="fas fa-sun text-[var(--text-light)]"></i>
+                    	<span data-i18n="theme-toggle">Toggle Theme</span>
+                	</button>
+                	<button id="lang-toggle-mobile" class="lang-toggle flex items-center space-x-2 rounded-full border-2 border-[var(--border-light)] px-3 py-1 w-fit">
+                    	<i class="fas fa-globe"></i>
+                    	<span data-i18n="lang-toggle">EN</span>
+                	</button>
+            	</div>
+        	</div>
+    	</div>
+	</nav>
+
+	<!-- Scroll Indicator -->
+	<div class="fixed right-4 top-1/2 transform -translate-y-1/2 flex flex-col space-y-3 z-50">
+    	<a href="#header" class="scroll-dot relative w-3 h-3 rounded-full bg-[var(--border-light)] transition-all duration-200" data-section="header">
+        	<span data-i18n="nav-header">Header</span>
+    	</a>
+    	<a href="#executive-summary" class="scroll-dot relative w-3 h-3 rounded-full bg-[var(--border-light)] transition-all duration-200" data-section="executive-summary">
+        	<span data-i18n="nav-executive-summary">Executive Summary</span>
+    	</a>
+    	<a href="#impact-highlights" class="scroll-dot relative w-3 h-3 rounded-full bg-[var(--border-light)] transition-all duration-200" data-section="impact-highlights">
+        	<span data-i18n="nav-impact-highlights">Impact Highlights</span>
+    	</a>
+    	<a href="#case-studies-detailed" class="scroll-dot relative w-3 h-3 rounded-full bg-[var(--border-light)] transition-all duration-200" data-section="case-studies-detailed">
+        	<span data-i18n="nav-case-studies-detailed">Case Studies</span>
+    	</a>
+    	<a href="#execution-framework" class="scroll-dot relative w-3 h-3 rounded-full bg-[var(--border-light)] transition-all duration-200" data-section="execution-framework">
+        	<span data-i18n="nav-execution-framework">Execution Framework</span>
+    	</a>
+    	<a href="#startup-roadmap" class="scroll-dot relative w-3 h-3 rounded-full bg-[var(--border-light)] transition-all duration-200" data-section="startup-roadmap">
+        	<span data-i18n="nav-startup-roadmap">Startup Roadmap</span>
+    	</a>
+    	<a href="#resilience-philosophy" class="scroll-dot relative w-3 h-3 rounded-full bg-[var(--border-light)] transition-all duration-200" data-section="resilience-philosophy">
+        	<span data-i18n="nav-resilience-philosophy">Resilience Philosophy</span>
+    	</a>
+    	<a href="#agile-flow" class="scroll-dot relative w-3 h-3 rounded-full bg-[var(--border-light)] transition-all duration-200" data-section="agile-flow">
+        	<span data-i18n="nav-agile-flow">Agile Flow</span>
+    	</a>
+    	<a href="#founder-mindset" class="scroll-dot relative w-3 h-3 rounded-full bg-[var(--border-light)] transition-all duration-200" data-section="founder-mindset">
+        	<span data-i18n="nav-founder-mindset">Founder Mindset</span>
+    	</a>
+    	<a href="#my-operating-system" class="scroll-dot relative w-3 h-3 rounded-full bg-[var(--border-light)] transition-all duration-200" data-section="my-operating-system">
+        	<span data-i18n="nav-my-operating-system">Operating System</span>
+    	</a>
+    	<a href="#product-builds" class="scroll-dot relative w-3 h-3 rounded-full bg-[var(--border-light)] transition-all duration-200" data-section="product-builds">
+        	<span data-i18n="nav-product-builds">Product Builds</span>
+    	</a>
+    	<a href="#skills-tools" class="scroll-dot relative w-3 h-3 rounded-full bg-[var(--border-light)] transition-all duration-200" data-section="skills-tools">
+        	<span data-i18n="nav-skills-tools">Skills & Tools</span>
+    	</a>
+    	<a href="#testimonials" class="scroll-dot relative w-3 h-3 rounded-full bg-[var(--border-light)] transition-all duration-200" data-section="testimonials">
+        	<span data-i18n="nav-testimonials">Testimonials</span>
+    	</a>
+    	<a href="#interests" class="scroll-dot relative w-3 h-3 rounded-full bg-[var(--border-light)] transition-all duration-200" data-section="interests">
+        	<span data-i18n="nav-interests">Interests</span>
+    	</a>
+    	<a href="#contact" class="scroll-dot relative w-3 h-3 rounded-full bg-[var(--border-light)] transition-all duration-200" data-section="contact">
+        	<span data-i18n="nav-contact">Contact</span>
+    	</a>
+	</div>
+
+	<!-- Main Content -->
+	<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ 	<!-- Header -->
+<section id="header" class="pt-32 pb-20 bg-[var(--bg-light)] text-left">
+  <div class="px-6 md:px-12 max-w-4xl mx-auto">
+	<h1 class="text-4xl md:text-5xl font-bold text-[var(--text-light)] mb-6" data-i18n="header-name">
+  	Hi there,
+	</h1>
+	<p class="text-xl md:text-2xl text-[var(--text-light)] mb-4" data-i18n="header-greeting">
+  	I’m Saleh S. Mukhrish — This is where ideas turn into impact.
+	</p>
+	<p class="text-xl md:text-2xl text-[var(--text-light)] mb-4" data-i18n="header-welcome-1">
+  	Across industries and ventures, I turn possibility into progress—grounded in clear thinking, strategic action, and results that scale.
+	</p>
+	<p class="text-xl md:text-2xl text-[var(--text-light)]" data-i18n="header-welcome-2">
+  	Whether you're here to explore opportunity, evaluate alignment, or simply get inspired—I'm glad you're here. Let’s build what’s next.
+	</p>
+  </div>
+</section>
+
+
+
+
+    	<!-- Executive Summary -->
+    	<section id="executive-summary" class="py-20 max-w-prose mx-auto px-4">
+        	<div class="section-header text-center mb-8">
+            	<div class="gradient-top"></div>
+            	<h3 class="text-2xl md:text-3xl font-bold text-white bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] py-2 rounded-t-md" data-i18n="executive-title">Senior Business Strategist | Lean Startup Execution & Scalable Ops Leadership</h3>
+        	</div>
+        	<div class="card bg-[var(--box-bg-light)] rounded-xl p-8 shadow-md">
+            	<div class="gradient-top"></div>
+            	<p class="text-base text-[var(--text-light)] mb-6" data-i18n="executive-body">I’m a tech-forward strategist with a founder’s mindset and a relentless drive to execute. I design lean systems, validate MVPs, and build operational frameworks that drive real results. My strength lies in connecting business strategy to tech-enabled execution—without code. Known for strategic clarity, fast iteration, and results-driven thinking across startups and digital ventures.</p>
+            	<div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center">
+                	<a href="https://drive.google.com/file/d/1kJZF91dx4XviVhu2cWiWkMoqNbp5wim4/view?usp=sharing" target="_blank" class="cta-button flex items-center space-x-2 text-[white] bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] px-4 py-2 rounded-full" data-i18n="executive-cta-resume">
+                    	<i class="far fa-file-pdf fa-icon"></i>
+                    	<span>Download My Resume (PDF)</span>
+                	</a>
+                	<a href="https://mail.google.com/mail/u/0/?fs=1&to=sal.mukhrish@gmail.com&su=Intrested+In+Your+Work+and+Experience+&body&tf=cm" class="cta-button flex items-center space-x-2 text-[white] bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] px-4 py-2 rounded-full" data-i18n="executive-cta-contact">
+                    	<i class="far fa-envelope fa-icon"></i>
+                    	<span>Let’s Work Together</span>
+                	</a>
+            	</div>
+        	</div>
+    	</section>
+
+    	<!-- Impact Highlights -->
+    	<section id="impact-highlights" class="py-20 bg-[var(--bg-light)] max-w-prose mx-auto px-4">
+        	<div class="section-header text-center mb-8">
+            	<div class="gradient-top"></div>
+            	<h3 class="text-2xl md:text-3xl font-bold text-white bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] py-2 rounded-t-md" data-i18n="impact-title"> Impact Highlights</h3>
+        	</div>
+        	<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md flex items-start space-x-4">
+                	<div class="gradient-top"></div>
+                	<i class="fas fa-truck fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                	<p class="text-base text-[var(--text-light)]" data-i18n="impact-coffeehub">CoffeeHub: Reduced delivery time by 60%, improving customer satisfaction from 3.8⭐ to 4.7⭐</p>
+            	</div>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md flex items-start space-x-4">
+                	<div class="gradient-top"></div>
+                	<i class="fas fa-briefcase fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                	<p class="text-base text-[var(--text-light)]" data-i18n="impact-anjezli">Anjezli: Built a market-ready job platform prototype for Saudi Arabia’s $29.7B work economy</p>
+            	</div>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md flex items-start space-x-4">
+                	<div class="gradient-top"></div>
+                	<i class="fas fa-utensils fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                	<p class="text-base text-[var(--text-light)]" data-i18n="impact-chef">Chef S. Diet Food: Cut food waste by 15%, boosting profitability</p>
+            	</div>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md flex items-start space-x-4">
+                	<div class="gradient-top"></div>
+                	<i class="fas fa-shopping-cart fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                	<p class="text-base text-[var(--text-light)]" data-i18n="impact-muscle">Build Muscle Store: Established international supplier network and executed successful e-commerce marketing campaigns</p>
+            	</div>
+        	</div>
+    	</section>
+
+    	<!-- Case Studies -->
+    	<section id="case-studies-detailed" class="py-20 bg-[var(--bg-light)] max-w-prose mx-auto px-4">
+        	<div class="section-header text-center mb-8">
+            	<div class="gradient-top"></div>
+            	<h3 class="text-2xl md:text-3xl font-bold text-white bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] py-2 rounded-t-md" data-i18n="case-studies-title">Case Studies</h3>
+        	</div>
+        	<div class="space-y-12">
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-8 shadow-md flex flex-col md:flex-row items-start md:space-x-6">
+                	<div class="gradient-top"></div>
+                	<div class="text-[var(--accent-blue)] text-4xl mb-4 md:mb-0">
+                    	<i class="fas fa-truck fa-icon"></i>
+                	</div>
+                	<div class="flex-1">
+                    	<h4 class="text-xl md:text-2xl font-semibold text-[var(--text-light)] mb-2" data-i18n="case-coffeehub-title">CoffeeHub – Delivery Optimization & Platform Development</h4>
+                    	<p class="text-base text-[var(--text-light)] mb-2" data-i18n="case-coffeehub-challenge"><strong>Challenge:</strong> Delivery delays were frustrating customers and limiting scalability.</p>
+                    	<p class="text-base text-[var(--text-light)] mb-2" data-i18n="case-coffeehub-solution"><strong>Solution:</strong> Led the development of a logistics platform with route optimization and real-time tracking. Worked cross-functionally with engineering and design.</p>
+                    	<p class="text-base text-[var(--text-light)]" data-i18n="case-coffeehub-impact"><strong>Impact:</strong> 60% faster delivery, customer satisfaction improved from 3.8⭐ to 4.7⭐, enabled scalable growth.</p>
+                	</div>
+            	</div>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-8 shadow-md flex flex-col md:flex-row-reverse items-start md:space-x-6 md:space-x-reverse">
+                	<div class="gradient-top"></div>
+                	<div class="text-[var(--accent-blue)] text-4xl mb-4 md:mb-0">
+                    	<i class="fas fa-briefcase fa-icon"></i>
+                	</div>
+                	<div class="flex-1">
+                    	<h4 class="text-xl md:text-2xl font-semibold text-[var(--text-light)] mb-2" data-i18n="case-anjezli-title">Anjezli – Job Platform Prototype for the Job Economy</h4>
+                    	<p class="text-base text-[var(--text-light)] mb-2" data-i18n="case-anjezli-challenge"><strong>Challenge:</strong> Saudi Arabia lacked a local gig platform for task-based freelance work.</p>
+                    	<p class="text-base text-[var(--text-light)] mb-2" data-i18n="case-anjezli-solution"><strong>Solution:</strong> Designed and developed a prototype featuring task browsing, secure payments, and an intuitive interface. Led market research, testing, and investor pitch prep.</p>
+                    	<p class="text-base text-[var(--text-light)]" data-i18n="case-anjezli-impact"><strong>Impact:</strong> Prototype ready for launch, positive early tester feedback, in funding phase, targeting a $29.7B market.</p>
+                	</div>
+            	</div>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-8 shadow-md flex flex-col md:flex-row items-start md:space-x-6">
+                	<div class="gradient-top"></div>
+                	<div class="text-[var(--accent-blue)] text-4xl mb-4 md:mb-0">
+                    	<i class="fas fa-utensils fa-icon"></i>
+                	</div>
+                	<div class="flex-1">
+                    	<h4 class="text-xl md:text-2xl font-semibold text-[var(--text-light)] mb-2" data-i18n="case-chef-title">Chef S. Diet Food – Operations Optimization</h4>
+                    	<p class="text-base text-[var(--text-light)] mb-2" data-i18n="case-chef-challenge"><strong>Challenge:</strong> The business needed to improve profit margins through operational efficiency.</p>
+                    	<p class="text-base text-[var(--text-light)] mb-2" data-i18n="case-chef-solution"><strong>Solution:</strong> Streamlined supply chain, optimized kitchen processes, and launched a retention initiative.</p>
+                    	<p class="text-base text-[var(--text-light)]" data-i18n="case-chef-impact"><strong>Impact:</strong> 15% reduction in food waste, increased customer loyalty, boosted profitability.</p>
+                	</div>
+            	</div>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-8 shadow-md flex flex-col md:flex-row-reverse items-start md:space-x-6 md:space-x-reverse">
+                	<div class="gradient-top"></div>
+                	<div class="text-[var(--accent-blue)] text-4xl mb-4 md:mb-0">
+                    	<i class="fas fa-shopping-cart fa-icon"></i>
+                	</div>
+                	<div class="flex-1">
+                    	<h4 class="text-xl md:text-2xl font-semibold text-[var(--text-light)] mb-2" data-i18n="case-muscle-title">Build Muscle Store – E-Commerce Setup</h4>
+                    	<p class="text-base text-[var(--text-light)] mb-2" data-i18n="case-muscle-challenge"><strong>Challenge:</strong> Launching a new online fitness brand from scratch.</p>
+                    	<p class="text-base text-[var(--text-light)] mb-2" data-i18n="case-muscle-solution"><strong>Solution:</strong> Sourced suppliers globally and executed digital performance marketing campaigns.</p>
+                    	<p class="text-base text-[var(--text-light)]" data-i18n="case-muscle-impact"><strong>Impact:</strong> Built international supplier relationships, drove initial sales through targeted marketing.</p>
+                	</div>
+            	</div>
+        	</div>
+    	</section>
+
+    	<!-- Execution Framework -->
+    	<section id="execution-framework" class="py-20 bg-[var(--bg-light)] max-w-prose mx-auto px-4">
+        	<div class="section-header text-center mb-8">
+            	<div class="gradient-top"></div>
+            	<h3 class="text-2xl md:text-3xl font-bold text-white bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] py-2 rounded-t-md" data-i18n="execution-title">Methodology — Minimal Market Validation Loop (MMVL) Explained</h3>
+        	</div>
+        	<div class="card bg-[var(--box-bg-light)] rounded-xl p-8 shadow-md">
+            	<div class="gradient-top"></div>
+            	<p class="text-base text-[var(--text-light)] mb-6" data-i18n="execution-subtitle">A practical execution system to rapidly test startup ideas through lean cycles of feedback, iteration, and real-world validation.</p>
+            	<div class="space-y-6 relative">
+                	<div class="flex items-start space-x-4 bg-[var(--box-bg-light)] rounded-lg p-4 shadow-sm">
+                    	<i class="fas fa-lightbulb fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                    	<div>
+                        	<h4 class="text-lg font-semibold text-[var(--text-light)]" data-i18n="execution-step1-title"> Idea & Hypothesis Formulation</h4>
+                        	<p class="text-base text-[var(--text-light)]" data-i18n="execution-step1-body">Clearly define the problem and formulate testable hypotheses.</p>
+                    	</div>
+                	</div>
+                	<div class="absolute left-6 top-16 w-0.5 h-8 bg-[var(--border-light)]"></div>
+                	<div class="flex items-start space-x-4 bg-[var(--box-bg-light)] rounded-lg p-4 shadow-sm">
+                    	<i class="fas fa-flask fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                    	<div>
+                        	<h4 class="text-lg font-semibold text-[var(--text-light)]" data-i18n="execution-step2-title"> MVP Design</h4>
+                        	<p class="text-base text-[var(--text-light)]" data-i18n="execution-step2-body">Design the simplest version to test core hypotheses.</p>
+                    	</div>
+                	</div>
+                	<div class="absolute left-6 top-32 w-0.5 h-8 bg-[var(--border-light)]"></div>
+                	<div class="flex items-start space-x-4 bg-[var(--box-bg-light)] rounded-lg p-4 shadow-sm">
+                    	<i class="fas fa-rocket fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                    	<div>
+                        	<h4 class="text-lg font-semibold text-[var(--text-light)]" data-i18n="execution-step3-title"> Rapid Deployment</h4>
+                        	<p class="text-base text-[var(--text-light)]" data-i18n="execution-step3-body">Launch the MVP to early adopters.</p>
+                    	</div>
+                	</div>
+                	<div class="absolute left-6 top-48 w-0.5 h-8 bg-[var(--border-light)]"></div>
+                	<div class="flex items-start space-x-4 bg-[var(--box-bg-light)] rounded-lg p-4 shadow-sm">
+                    	<i class="fas fa-chart-bar fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                    	<div>
+                        	<h4 class="text-lg font-semibold text-[var(--text-light)]" data-i18n="execution-step4-title"> Measure & Analyze Results</h4>
+                        	<p class="text-base text-[var(--text-light)]" data-i18n="execution-step4-body">Collect data and measure metrics.</p>
+                    	</div>
+                	</div>
+                	<div class="absolute left-6 top-64 w-0.5 h-8 bg-[var(--border-light)]"></div>
+                	<div class="flex items-start space-x-4 bg-[var(--box-bg-light)] rounded-lg p-4 shadow-sm">
+                    	<i class="fas fa-redo fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                    	<div>
+                        	<h4 class="text-lg font-semibold text-[var(--text-light)]" data-i18n="execution-step5-title"> Learn & Iterate</h4>
+                        	<p class="text-base text-[var(--text-light)]" data-i18n="execution-step5-body">Refine the idea and repeat the loop.</p>
+                    	</div>
+                	</div>
+            	</div>
+            	<div class="mt-8 text-center">
+                	<a href="https://drive.google.com/drive/folders/1Qt87Xhmv-98-JgKrNapCmpAitisr2bCo?usp=sharing" target="_blank" class="cta-button flex items-center justify-center space-x-2 text-[white] bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] px-4 py-2 rounded-full" data-i18n="execution-cta">
+                    	<i class="far fa-file-pdf fa-icon"></i>
+                    	<span>Download the full MMVL diagram (PDF)</span>
+                	</a>
+            	</div>
+        	</div>
+    	</section>
+
+    	<!-- Startup Roadmap -->
+    	<section id="startup-roadmap" class="py-20 bg-[var(--box-bg-light)] max-w-prose mx-auto px-4">
+        	<div class="section-header text-center mb-8">
+            	<div class="gradient-top"></div>
+            	<h3 class="text-2xl md:text-3xl font-bold text-white bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] py-2 rounded-t-md" data-i18n="roadmap-title">Startup Roadmap: From Concept to Scale</h3>
+        	</div>
+        	<div class="space-y-6">
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<div class="flex items-start space-x-4">
+                    	<i class="fas fa-search fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                    	<div>
+                        	<h4 class="text-lg font-semibold text-[var(--text-light)]" data-i18n="roadmap-phase1-title">Phase 1: Idea & Validation</h4>
+                        	<p class="text-base text-[var(--text-light)]" data-i18n="roadmap-phase1-body">Identify a real problem, understand the target audience, and validate assumptions through lean experiments (like MMVL) using research and customer interviews.</p>
+                    	</div>
+                	</div>
+            	</div>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<div class="flex items-start space-x-4">
+                    	<i class="fas fa-cogs fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                    	<div>
+                        	<h4 class="text-lg font-semibold text-[var(--text-light)]" data-i18n="roadmap-phase2-title">Phase 2: MVP Development</h4>
+                        	<p class="text-base text-[var(--text-light)]" data-i18n="roadmap-phase2-body">Translate concepts into a functional MVP, prioritizing core features and preparing for user testing to gather real-world feedback.</p>
+                    	</div>
+                	</div>
+            	</div>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<div class="flex items-start space-x-4">
+                    	<i class="fas fa-users fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                    	<div>
+                        	<h4 class="text-lg font-semibold text-[var(--text-light)]" data-i18n="roadmap-phase3-title">Phase 3: Early Traction</h4>
+                        	<p class="text-base text-[var(--text-light)]" data-i18n="roadmap-phase3-body">Acquire initial users, analyze behavior, and iterate to achieve product-market fit, focusing on engagement and retention metrics.</p>
+                    	</div>
+                	</div>
+            	</div>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<div class="flex items-start space-x-4">
+                    	<i class="fas fa-bullhorn fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                    	<div>
+                        	<h4 class="text-lg font-semibold text-[var(--text-light)]" data-i18n="roadmap-phase4-title">Phase 4: Scaling & GTM</h4>
+                        	<p class="text-base text-[var(--text-light)]" data-i18n="roadmap-phase4-body">Scale operations, build sales and marketing funnels, and execute a go-to-market strategy to expand the user base.</p>
+                    	</div>
+                	</div>
+            	</div>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<div class="flex items-start space-x-4">
+                    	<i class="fas fa-chart-line fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                    	<div>
+                        	<h4 class="text-lg font-semibold text-[var(--text-light)]" data-i18n="roadmap-phase5-title">Phase 5: Growth & Optimization</h4>
+                        	<p class="text-base text-[var(--text-light)]" data-i18n="roadmap-phase5-body">Monitor KPIs, optimize processes, explore new revenue streams, and plan for expansion, focusing on sustainable growth.</p>
+                    	</div>
+                	</div>
+            	</div>
+        	</div>
+        	<div class="mt-8 text-center">
+            	<a href="https://www.linkedin.com/in/saleh-s-mukhrish-1195361aa/" target="_blank" class="cta-button inline-flex items-center space-x-2 text-[white] bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] px-4 py-2 rounded-full" data-i18n="roadmap-cta">
+                	<i class="fab fa-linkedin fa-icon"></i>
+                	<span>Follow My Work on LinkedIn</span>
+            	</a>
+        	</div>
+    	</section>
+
+    	<!-- Resilience Philosophy -->
+    	<section id="resilience-philosophy" class="py-20 bg-[var(--bg-light)] max-w-prose mx-auto px-4">
+        	<div class="section-header text-center mb-8">
+            	<div class="gradient-top"></div>
+            	<h3 class="text-2xl md:text-3xl font-bold text-white bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] py-2 rounded-t-md" data-i18n="resilience-title">Resilience in Execution: My Iteration Philosophy</h3>
+        	</div>
+        	<div class="card bg-[var(--box-bg-light)] rounded-xl p-8 shadow-md border-l-4 border-[var(--accent-blue)]">
+            	<div class="gradient-top"></div>
+            	<div class="flex items-start space-x-4 mb-4">
+                	<i class="fas fa-redo fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                	<p class="text-lg text-[var(--text-light)] bg-[#FFE7C4] px-2 py-1 rounded" data-i18n="resilience-highlight">Failure isn’t the end of the road — it’s part of the process.</p>
+            	</div>
+            	<p class="text-base text-[var(--text-light)]" data-i18n="resilience-body">When a project doesn’t succeed, I don’t walk away. I re-learn, analyze what went wrong, identify weaknesses, and resolve them with targeted solutions. <em>Why did it fail? What can be rebuilt?</em> Then, I try again — testing, refining, and iterating until success becomes inevitable. For me, it’s not just about building projects. It’s about building better versions of myself along the way.</p>
+        	</div>
+    	</section>
+
+    	<!-- Agile Flow -->
+    	<section id="agile-flow" class="py-20 bg-[var(--box-bg-light)] max-w-prose mx-auto px-4">
+        	<div class="section-header text-center mb-8">
+            	<div class="gradient-top"></div>
+            	<h3 class="text-2xl md:text-3xl font-bold text-white bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] py-2 rounded-t-md flex items-center justify-center space-x-2" data-i18n="agile-title">
+                	<span></span>
+                	<span>Agile Flow in Real-World Execution</span>
+            	</h3>
+        	</div>
+        	<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<p class="text-base text-[var(--text-light)]" data-i18n="agile-body">Agility isn’t about endless standups — it’s about tight feedback loops and ruthless prioritization. I design workflows that integrate directly with startup chaos: async check-ins, live dashboards, and tool-based automation that scales with lean teams.</p>
+            	</div>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<h4 class="text-lg font-semibold text-[var(--text-light)] mb-4" data-i18n="agile-components-title">Example Components:</h4>
+                	<ul class="space-y-4">
+                    	<li class="flex items-start space-x-2 bg-[#f0f0f0] dark:bg-gray-700 rounded-lg p-3">
+                        	<i class="fas fa-check-circle fa-icon text-green-500 text-lg"></i>
+                        	<span class="text-base text-[var(--text-light)]" data-i18n="agile-component1">Slack-integrated daily reports</span>
+                    	</li>
+                    	<li class="flex items-start space-x-2 bg-[#f0f0f0] dark:bg-gray-700 rounded-lg p-3">
+                        	<i class="fas fa-check-circle fa-icon text-green-500 text-lg"></i>
+                        	<span class="text-base text-[var(--text-light)]" data-i18n="agile-component2">Airtable-based KPI dashboards</span>
+                    	</li>
+                    	<li class="flex items-start space-x-2 bg-[#f0f0f0] dark:bg-gray-700 rounded-lg p-3">
+                        	<i class="fas fa-check-circle fa-icon text-green-500 text-lg"></i>
+                        	<span class="text-base text-[var(--text-light)]" data-i18n="agile-component3">Notion sprints tied to deliverables</span>
+                    	</li>
+                	</ul>
+            	</div>
+        	</div>
+    	</section>
+
+    	<!-- Founder Mindset -->
+    	<section id="founder-mindset" class="py-20 bg-[var(--bg-light)] max-w-prose mx-auto px-4">
+        	<div class="section-header text-center mb-8">
+            	<div class="gradient-top"></div>
+            	<h3 class="text-2xl md:text-3xl font-bold text-white bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] py-2 rounded-t-md" data-i18n="founder-title"> Founder Mindset Snapshot</h3>
+        	</div>
+        	<div class="card bg-[var(--box-bg-light)] rounded-xl p-8 shadow-md border-l-4 border-[var(--accent-blue)]">
+            	<div class="gradient-top"></div>
+            	<p class="text-base text-[var(--text-light)] mb-4" data-i18n="founder-body">I’ve worked in, led, and built startups—so I think like a founder, not a function. I ship MVPs with urgency, build for leverage, and avoid waste. I don’t just execute ideas—I architect them with clarity.</p>
+            	<blockquote class="text-lg font-bold italic text-[var(--text-light)] border-l-4 border-[var(--accent-teal)] pl-4" data-i18n="founder-quote">“I build with systems, iterate with intent, and scale with clarity.”</blockquote>
+        	</div>
+    	</section>
+
+    	<!-- My Operating System -->
+    	<section id="my-operating-system" class="py-20 bg-[var(--box-bg-light)] max-w-prose mx-auto px-4">
+        	<div class="section-header text-center mb-8">
+            	<div class="gradient-top"></div>
+            	<h3 class="text-2xl md:text-3xl font-bold text-white bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] py-2 rounded-t-md" data-i18n="os-title">My Operating System</h3>
+        	</div>
+        	<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<div class="flex items-start space-x-4">
+                    	<i class="fas fa-redo fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                    	<div>
+                        	<h4 class="text-lg font-semibold text-[var(--text-light)]" data-i18n="os-item1-title">Iterative Execution</h4>
+                        	<p class="text-base text-[var(--text-light)]" data-i18n="os-item1-body">Launch > Measure > Learn > Repeat</p>
+                    	</div>
+                	</div>
+            	</div>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<div class="flex items-start space-x-4">
+                    	<i class="fas fa-chart-bar fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                    	<div>
+                        	<h4 class="text-lg font-semibold text-[var(--text-light)]" data-i18n="os-item2-title">Data-First Decisions</h4>
+                        	<p class="text-base text-[var(--text-light)]" data-i18n="os-item2-body">Every assumption challenged via insight</p>
+                    	</div>
+                	</div>
+            	</div>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<div class="flex items-start space-x-4">
+                    	<i class="fas fa-puzzle-piece fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                    	<div>
+                        	<h4 class="text-lg font-semibold text-[var(--text-light)]" data-i18n="os-item3-title">Systems Thinking</h4>
+                        	<p class="text-base text-[var(--text-light)]" data-i18n="os-item3-body">Nothing stands alone — everything connects</p>
+                    	</div>
+                	</div>
+            	</div>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<div class="flex items-start space-x-4">
+                    	<i class="fas fa-cogs fa-icon text-[var(--accent-blue)] text-2xl"></i>
+                    	<div>
+                        	<h4 class="text-lg font-semibold text-[var(--text-light)]" data-i18n="os-item4-title">Tool-Driven Ops</h4>
+                        	<p class="text-base text-[var(--text-light)]" data-i18n="os-item4-body">Scale through automation and async flow</p>
+                    	</div>
+                	</div>
+            	</div>
+        	</div>
+    	</section>
+
+    	<!-- Product Builds & Tech Stack -->
+    	<section id="product-builds" class="py-20 bg-[var(--bg-light)] max-w-prose mx-auto px-4">
+        	<div class="section-header text-center mb-8">
+            	<div class="gradient-top"></div>
+            	<h3 class="text-2xl md:text-3xl font-bold text-white bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] py-2 rounded-t-md" data-i18n="product-builds-title">Product Builds & Technical Skills</h3>
+        	</div>
+        	<div class="card bg-[var(--box-bg-light)] rounded-xl p-8 shadow-md">
+            	<div class="gradient-top"></div>
+            	<div class="flex items-center mb-4">
+                	<i class="fas fa-laptop-code fa-icon text-[var(--accent-blue)] text-2xl mr-2 drop-shadow"></i>
+                	<h4 class="text-2xl font-bold text-[var(--text-light)]" data-i18n="product-builds-subtitle">Product Builds & No-Code Execution</h4>
+            	</div>
+            	<div class="bg-[#f9f9f9] dark:bg-gray-700 rounded-lg p-6 mb-6 shadow-inner">
+                	<p class="text-base text-[var(--text-light)] mb-4" data-i18n="product-builds-body1">While I operate primarily at the strategic level, I stay deeply engaged in execution—building real products, testing ideas, and optimizing workflows hands-on.</p>
+                	<p class="text-base text-[var(--text-light)]" data-i18n="product-builds-body2">From UI flows to investor-ready data rooms, I've built and shipped working MVPs using modern no-code tools and automation stacks.</p>
+            	</div>
+            	<h5 class="text-lg font-semibold text-[var(--text-light)] mb-4" data-i18n="product-builds-tools-title">Platforms I’ve Used to Build Live Products</h5>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<div class="flex flex-wrap gap-3">
+                    	<span class="tool-tag bg-[#f0f0f0] dark:bg-gray-600 text-[var(--text-light)] px-3 py-1 rounded-full text-sm">Framer</span>
+                    	<span class="tool-tag bg-[#f0f0f0] dark:bg-gray-600 text-[var(--text-light)] px-3 py-1 rounded-full text-sm">Webflow</span>
+                    	<span class="tool-tag bg-[#f0f0f0] dark:bg-gray-600 text-[var(--text-light)] px-3 py-1 rounded-full text-sm">Airtable</span>
+                    	<span class="tool-tag bg-[#f0f0f0] dark:bg-gray-600 text-[var(--text-light)] px-3 py-1 rounded-full text-sm">Notion</span>
+                    	<span class="tool-tag bg-[#f0f0f0] dark:bg-gray-600 text-[var(--text-light)] px-3 py-1 rounded-full text-sm">Zapier</span>
+                    	<span class="tool-tag bg-[#f0f0f0] dark:bg-gray-600 text-[var(--text-light)] px-3 py-1 rounded-full text-sm">Whalesync</span>
+                    	<span class="tool-tag bg-[#f0f0f0] dark:bg-gray-600 text-[var(--text-light)] px-3 py-1 rounded-full text-sm">GitHub</span>
+                	</div>
+            	</div>
+            	<div class="mt-8 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
+                	<a href="https://github.com/SalMukhrish" target="_blank" class="cta-button inline-flex items-center space-x-2 text-[white] bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] px-4 py-2 rounded-full" data-i18n="product-builds-cta-github">
+                    	<i class="fab fa-github fa-icon"></i>
+                    	<span>Visit My GitHub</span>
+                	</a>
+                	<a href="https://github.com/SalMukhrish" target="_blank" class="cta-button inline-flex items-center space-x-2 text-[white] bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] px-4 py-2 rounded-full" data-i18n="product-builds-cta-demo">
+                    	<i class="fas fa-eye fa-icon"></i>
+                    	<span>Try a Live Build</span>
+                	</a>
+            	</div>
+        	</div>
+    	</section>
+
+    	<!-- Skills & Tools -->
+    	<section id="skills-tools" class="py-20 bg-[var(--box-bg-light)] max-w-prose mx-auto px-4">
+        	<div class="section-header text-center mb-8">
+            	<div class="gradient-top"></div>
+            	<h3 class="text-2xl md:text-3xl font-bold text-white bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] py-2 rounded-t-md" data-i18n="skills-tools-title">My Technical Stack & Strengths</h3>
+        	</div>
+        	<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<div class="flex items-center mb-4">
+                    	<i class="fas fa-star fa-icon text-[var(--accent-blue)] text-2xl mr-2"></i>
+                    	<h4 class="text-lg font-semibold text-[var(--text-light)]" data-i18n="skills-tools-core-title">Core Strengths</h4>
+                	</div>
+                	<ul class="space-y-2">
+                    	<li class="text-base text-[var(--text-light)]" data-i18n="skills-tools-core1"><strong>Product Development</strong></li>
+                    	<li class="text-base text-[var(--text-light)]" data-i18n="skills-tools-core2"><strong>Lean Startup Strategy</strong></li>
+                    	<li class="text-base text-[var(--text-light)]" data-i18n="skills-tools-core3"><strong>Go-to-Market Execution</strong></li>
+                    	<li class="text-base text-[var(--text-light)]" data-i18n="skills-tools-core4"><strong>Market Research & Validation</strong></li>
+                    	<li class="text-base text-[var(--text-light)]" data-i18n="skills-tools-core5"><strong>Agile/Project Management</strong></li>
+                    	<li class="text-base text-[var(--text-light)]" data-i18n="skills-tools-core6"><strong>Operations Leadership</strong></li>
+                	</ul>
+            	</div>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<div class="flex items-center mb-4">
+                    	<i class="fas fa-tools fa-icon text-[var(--accent-blue)] text-2xl mr-2"></i>
+                    	<h4 class="text-lg font-semibold text-[var(--text-light)]" data-i18n="skills-tools-tech-title">Tools & Tech Stack</h4>
+                	</div>
+                	<ul class="space-y-2">
+                    	<li class="text-base text-[var(--text-light)]" data-i18n="skills-tools-tech1">Notion, Airtable, Zapier</li>
+                    	<li class="text-base text-[var(--text-light)]" data-i18n="skills-tools-tech2">Webflow, Framer (No-Code)</li>
+                    	<li class="text-base text-[var(--text-light)]" data-i18n="skills-tools-tech3">JIRA, Excel, Pipedrive CRM Systems</li>
+                    	<li class="text-base text-[var(--text-light)]" data-i18n="skills-tools-tech4">Business Analytics & UX/UI</li>
+                    	<li class="text-base text-[var(--text-light)]" data-i18n="skills-tools-tech5">Data-Informed Decision Making</li>
+                	</ul>
+            	</div>
+        	</div>
+        	<div class="card bg-[#fffce7] dark:bg-gray-700 rounded-xl p-6 mt-6 shadow-md border-l-4 border-yellow-400">
+            	<div class="gradient-top"></div>
+            	<p class="text-base text-[var(--text-light)]" data-i18n="skills-tools-highlight">Considered strong in <strong>“0 to 1” execution environments</strong> and <strong>rapid iteration</strong> under resource constraints.</p>
+        	</div>
+    	</section>
+
+    	<!-- Testimonials -->
+    	<section id="testimonials" class="py-20 bg-[var(--bg-light)] max-w-prose mx-auto px-4">
+        	<div class="section-header text-center mb-8">
+            	<div class="gradient-top"></div>
+            	<h3 class="text-2xl md:text-3xl font-bold text-white bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] py-2 rounded-t-md" data-i18n="testimonials-title">What Others Say</h3>
+        	</div>
+        	<div class="space-y-6">
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<i class="fas fa-quote-left fa-icon text-[var(--accent-blue)] text-2xl mb-4"></i>
+                	<p class="text-base italic text-[var(--text-light)] mb-4" data-i18n="testimonials-quote1">“Saleh’s ability to turn complex ideas into actionable MVPs was critical for our early growth. His strategic clarity and execution focus significantly accelerated our path to product-market fit.”</p>
+                	<p class="text-sm font-semibold text-[var(--text-light)]" data-i18n="testimonials-author1">— Ahmed K., Co-Founder, CoffeeHub</p>
+            	</div>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<i class="fas fa-quote-left fa-icon text-[var(--accent-blue)] text-2xl mb-4"></i>
+                	<p class="text-base italic text-[var(--text-light)] mb-4" data-i18n="testimonials-quote2">“Saleh is relentless. Once he sets his mind to something, he sees it through with sharp focus and commitment. His brilliance lies not just in ideation, but in execution. I genuinely believe he can achieve anything he decides to build.”</p>
+                	<p class="text-sm font-semibold text-[var(--text-light)]" data-i18n="testimonials-author2">— Mohammed A., Legal Advisor</p>
+            	</div>
+        	</div>
+    	</section>
+
+    	<!-- Interests -->
+    	<section id="interests" class="py-20 bg-[var(--box-bg-light)] max-w-prose mx-auto px-4">
+        	<div class="section-header text-center mb-8">
+            	<div class="gradient-top"></div>
+            	<h3 class="text-2xl md:text-3xl font-bold text-white bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] py-2 rounded-t-md" data-i18n="interests-title">Personal Interests</h3>
+        	</div>
+        	<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<ul class="space-y-4">
+                    	<li class="flex items-center space-x-2">
+                        	<i class="fas fa-rocket fa-icon text-[var(--accent-blue)] text-lg"></i>
+                        	<span class="text-base text-[var(--text-light)]" data-i18n="interests-item1">Agile Product Development</span>
+                    	</li>
+                    	<li class="flex items-center space-x-2">
+                        	<i class="fas fa-chart-line fa-icon text-[var(--accent-blue)] text-lg"></i>
+                        	<span class="text-base text-[var(--text-light)]" data-i18n="interests-item2">Growth Marketing</span>
+                    	</li>
+                    	<li class="flex items-center space-x-2">
+                        	<i class="fas fa-globe fa-icon text-[var(--accent-blue)] text-lg"></i>
+                        	<span class="text-base text-[var(--text-light)]" data-i18n="interests-item3">Emerging Market Startups</span>
+                    	</li>
+                	</ul>
+            	</div>
+            	<div class="card bg-[var(--box-bg-light)] rounded-xl p-6 shadow-md">
+                	<div class="gradient-top"></div>
+                	<ul class="space-y-4">
+                    	<li class="flex items-center space-x-2">
+                        	<i class="fas fa-brain fa-icon text-[var(--accent-blue)] text-lg"></i>
+                        	<span class="text-base text-[var(--text-light)]" data-i18n="interests-item4">Behavioral Economics</span>
+                    	</li>
+                    	<li class="flex items-center space-x-2">
+                        	<i class="fas fa-users fa-icon text-[var(--accent-blue)] text-lg"></i>
+                        	<span class="text-base text-[var(--text-light)]" data-i18n="interests-item5">Mentoring & Coaching</span>
+                    	</li>
+                    	<li class="flex items-center space-x-2">
+                        	<i class="fas fa-chess fa-icon text-[var(--accent-blue)] text-lg"></i>
+                        	<span class="text-base text-[var(--text-light)]" data-i18n="interests-item6">Chess, Gym, Lifelong Learning</span>
+                    	</li>
+                	</ul>
+            	</div>
+        	</div>
+    	</section>
+
+    	<!-- Contact -->
+    	<section id="contact" class="py-20 bg-[var(--bg-light)] max-w-prose mx-auto px-4">
+        	<div class="section-header text-center mb-8">
+            	<div class="gradient-top"></div>
+            	<h3 class="text-2xl md:text-3xl font-bold text-white bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-teal)] py-2 rounded-t-md" data-i18n="contact-title">Let’s Connect</h3>
+        	</div>
+        	<div class="card bg-[var(--box-bg-light)] rounded-xl p-8 shadow-md">
+            	<div class="gradient-top"></div>
+            	<p class="text-base text-[var(--text-light)] mb-6 text-center" data-i18n="contact-body">Interested in collaborating or learning more? Reach out or download my resume.</p>
+            	<div class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-items-center">
+                	<a href=" https://mail.google.com/mail/u/0/?fs=1&to=sal.mukhrish@gmail.com&su=Intrested+In+Your+Resume+and+Experience+&body&tf=cm" class="contact-icon flex items-center justify-center w-12 h-12 rounded-full bg-[var(--box-bg-light)] shadow-md text-[var(--accent-blue)] hover:text-white" title="Email">
+                    	<i class="fas fa-envelope fa-icon text-xl"></i>
+                	</a>
+                	<a href="https://www.linkedin.com/in/saleh-s-mukhrish-1195361aa/" target="_blank" class="contact-icon flex items-center justify-center w-12 h-12 rounded-full bg-[var(--box-bg-light)] shadow-md text-[var(--accent-blue)] hover:text-white" title="LinkedIn">
+                    	<i class="fab fa-linkedin fa-icon text-xl"></i>
+                	</a>
+                	<a href="https://github.com/SalMukhrish" target="_blank" class="contact-icon flex items-center justify-center w-12 h-12 rounded-full bg-[var(--box-bg-light)] shadow-md text-[var(--accent-blue)] hover:text-white" title="GitHub">
+                    	<i class="fab fa-github fa-icon text-xl"></i>
+                	</a>
+                	<a href="https://drive.google.com/file/d/1kJZF91dx4XviVhu2cWiWkMoqNbp5wim4/view?usp=sharing" target="_blank" class="contact-icon flex items-center justify-center w-12 h-12 rounded-full bg-[var(--box-bg-light)] shadow-md text-[var(--accent-blue)] hover:text-white" title="Resume">
+                    	<i class="far fa-file-pdf fa-icon text-xl"></i>
+                	</a>
+            	</div>
+        	</div>
+    	</section>
+	</main>
+
+	<!-- Footer -->
+<footer id="footer" class="py-12 bg-[#101828] text-center border-t-2 border-teal-400">
+	<p class="text-sm text-gray-400 light:text-light-400" data-i18n="footer">
+    	© 2025 Saleh Mukhrish — All Rights Reserved • Built with
+    	<span class="hover:underline hover:text-teal-300 transition-colors duration-200">Webflow</span> &
+    	<span class="hover:underline hover:text-teal-300 transition-colors duration-200">Notion</span>
+    	• Portfolio v2.3
+	</p>
+</footer>
+
+
+	<!-- Scripts -->
+	<script>
+    	const translations = {
+        	en: {
+            	'brand': 'Saleh Mukhrish',
+            	'nav-header': 'Header',
+            	'nav-executive-summary': 'Executive Summary',
+            	'nav-impact-highlights': 'Impact Highlights',
+            	'nav-case-studies-detailed': 'Case Studies',
+            	'nav-execution-framework': 'Execution Framework',
+            	'nav-startup-roadmap': 'Startup Roadmap',
+            	'nav-resilience-philosophy': 'Resilience Philosophy',
+            	'nav-agile-flow': 'Agile Flow',
+            	'nav-founder-mindset': 'Founder Mindset',
+            	'nav-my-operating-system': 'Operating System',
+            	'nav-product-builds': 'Product Builds',
+            	'nav-skills-tools': 'Skills & Tools',
+            	'nav-testimonials': 'Testimonials',
+            	'nav-interests': 'Interests',
+            	'nav-contact': 'Contact',
+            	'lang-toggle': 'EN',
+            	'theme-toggle': 'Toggle Theme',
+            	'header-name':_DATADOLLAR_Saleh S. Mukhrish',
+            	'header-greeting': 'Hi there,',
+            	'header-welcome': 'Welcome...',
+            	'executive-title': 'Senior Business Strategist | Lean Startup Execution & Scalable Ops Leadership',
+            	'executive-body': 'I’m a tech-forward strategist with a founder’s mindset and a relentless drive to execute. I design lean systems, validate MVPs, and build operational frameworks that drive real results. My strength lies in connecting business strategy to tech-enabled execution—without code. Known for strategic clarity, fast iteration, and results-driven thinking across startups and digital ventures.',
+            	'executive-cta-resume': 'Download My Resume (PDF)',
+            	'executive-cta-contact': 'Let’s Work Together',
+            	'impact-title': 'Impact Highlights',
+            	'impact-coffeehub': 'CoffeeHub: Reduced delivery time by 60%, improving customer satisfaction from 3.8⭐ to 4.7⭐',
+            	'impact-anjezli': 'Anjezli: Launched a market-ready job platform prototype for Saudi Arabia’s $29.7B gig economy',
+            	'impact-chef': 'Chef S. Diet Food: Cut food waste by 15%, boosting profitability',
+            	'impact-muscle': 'Build Muscle Store: Established international supplier network and executed successful e-commerce marketing campaigns',
+            	'case-studies-title': 'Case Studies',
+            	'case-coffeehub-title': 'CoffeeHub – Delivery Optimization & Platform Development',
+            	'case-coffeehub-challenge': '<strong>Challenge:</strong> Delivery delays were frustrating customers and limiting scalability.',
+            	'case-coffeehub-solution': '<strong>Solution:</strong> Led the development of a logistics platform with route optimization and real-time tracking. Worked cross-functionally with engineering and design.',
+            	'case-coffeehub-impact': '<strong>Impact:</strong> 60% faster delivery, customer satisfaction improved from 3.8⭐ to 4.7⭐, enabled scalable growth.',
+            	'case-anjezli-title': 'Anjezli – Job Platform Prototype for the Gig Economy',
+            	'case-anjezli-challenge': '<strong>Challenge:</strong> Saudi Arabia lacked a local gig platform for task-based freelance work.',
+            	'case-anjezli-solution': '<strong>Solution:</strong> Designed and developed a prototype featuring task browsing, secure payments, and an intuitive interface. Led market research, testing, and investor pitch prep.',
+            	'case-anjezli-impact': '<strong>Impact:</strong> Prototype ready for launch, positive early tester feedback, in funding phase, targeting a $29.7B market.',
+            	'case-chef-title': 'Chef S. Diet Food – Operations Optimization',
+            	'case-chef-challenge': '<strong>Challenge:</strong> The business needed to improve profit margins through operational efficiency.',
+            	'case-chef-solution': '<strong>Solution:</strong> Streamlined supply chain, optimized kitchen processes, and launched a retention initiative.',
+            	'case-chef-impact': '<strong>Impact:</strong> 15% reduction in food waste, increased customer loyalty, boosted profitability.',
+            	'case-muscle-title': 'Build Muscle Store – E-Commerce Setup',
+            	'case-muscle-challenge': '<strong>Challenge:</strong> Launching a new online fitness brand from scratch.',
+            	'case-muscle-solution': '<strong>Solution:</strong> Sourced suppliers globally and executed digital performance marketing campaigns.',
+            	'case-muscle-impact': '<strong>Impact:</strong> Built international supplier relationships, drove initial sales through targeted marketing.',
+            	'execution-title': 'Methodology — Minimal Market Validation Loop (MMVL) Explained',
+            	'execution-subtitle': 'A practical execution system to rapidly test startup ideas through lean cycles of feedback, iteration, and real-world validation.',
+            	'execution-step1-title': '💡 Idea & Hypothesis Formulation',
+            	'execution-step1-body': 'Clearly define the problem and formulate testable hypotheses.',
+            	'execution-step2-title': '🧪 MVP Design',
+            	'execution-step2-body': 'Design the simplest version to test core hypotheses.',
+            	'execution-step3-title': '🚀 Rapid Deployment',
+            	'execution-step3-body': 'Launch the MVP to early adopters.',
+            	'execution-step4-title': '📊 Measure & Analyze Results',
+            	'execution-step4-body': 'Collect data and measure metrics.',
+            	'execution-step5-title': '🔁 Learn &
